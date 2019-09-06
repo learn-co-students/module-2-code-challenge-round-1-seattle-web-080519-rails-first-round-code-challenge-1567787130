@@ -1,10 +1,5 @@
 <h2>All Heroines</h2>
-
-<ul>
   <% @heroines.each do |heroine| %>
-    <li>
-      <%= heroine.super_name %>
-    </li>
-    <br>
+      <%= link_to heroine.super_name, heroine_path(heroine) %><br>
+      <%= link_to "Delete", heroine, method: :delete, data: { confirm: "YOU SURE?!?" } %><br>
   <% end %>
-</ul>

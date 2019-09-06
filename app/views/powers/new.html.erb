@@ -1,0 +1,24 @@
+<% if @power.error? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@power.errors.count, "error") %>
+    prohibited this power from being saved:
+  </h2>
+
+  <ul>
+  <% @power.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
+
+<%= form_for (@power) do |f| %>   
+    <label for="@power_name"> power name: </label>
+    <%= f.text_field :name %><br> 
+
+    <label for="@power_description"> power description: </label>
+    <%= f.text_field :description %><br>
+    
+    <%= f.submit %>
+<% end %>

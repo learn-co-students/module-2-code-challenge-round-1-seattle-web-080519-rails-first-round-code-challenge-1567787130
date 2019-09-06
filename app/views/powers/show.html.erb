@@ -1,0 +1,8 @@
+this is POWER SHOW page
+
+<h1>Power name: <%= @power.name %></h1>
+<h1>Power description: <%= @power.description %></h1>
+
+<% @heroines_that_belong_to_power.each do |heroine| %>
+    <h3>Heroine name: </h3><%= heroine.name %><br>
+<% end %>
