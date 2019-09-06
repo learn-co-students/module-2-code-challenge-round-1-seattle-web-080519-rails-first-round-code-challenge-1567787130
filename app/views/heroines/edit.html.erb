@@ -1,0 +1,27 @@
+<% if @heroine.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@heroine.errors.count, "error") %>
+    prohibited this heroine from being saved:
+  </h2>
+
+  <ul>
+  <% @heroine.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
+
+<%= form_for (@heroine) do |f| %>
+    <label for="@heroine_name"> Heroine name: </label>
+    <%= f.text_field :name %><br>
+
+    <label for="@heroine_super_name"> Super name: </label>
+    <%= f.text_field :super_name %><br>
+
+    <label for="heroine_power_id"> Power: </label>
+    <%= f.text_field :power_id %>
+    
+    <%= f.submit %>
+<% end %>

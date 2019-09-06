@@ -1,0 +1,9 @@
+HEROINE POWER SHOW PAGE
+
+<h1>This is show page for HEROINES</h1>
+
+<h3>Heroine first name: <%= @heroine.name %></h3>
+<h3>Heroine last name: <%= @heroine.super_name %></h3>
+<% @heroine.all.each do |heroine| %>
+    <h3>Heroine power: <%= heroine_power.name %></h3>
+<% end %>
